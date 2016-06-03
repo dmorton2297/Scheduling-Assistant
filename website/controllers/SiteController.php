@@ -2,6 +2,7 @@
 namespace website\controllers;
 
 use Yii;
+use website\models\CCalEntryForm;
 use common\models\LoginForm;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -52,17 +53,14 @@ class SiteController extends Controller
         return $this->render('calendar');
     }
     
-    /*public function actionCalendarEntry() {
+    public function actionCalendarEntry() 
+    {
         $model = new CCalEntryForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            return $this->render('entry-confirm', ['model'=> $model]);
-            return this->render('calendar');
-         else {
-            return $this->render('entry', ['model' => $model]);
-           return this->render('calendar');
+            echo "Entry Created";
+            return $this->render('calendar');
         }
-        
-
-    }*/	
+       return $this->render('entry', ['model'=> $model]); 
+    }
 	
 }
