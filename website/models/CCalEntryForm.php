@@ -9,6 +9,7 @@ class CCalEntryForm extends Model
 {
 	public $title;
 	public $description;
+    public $notes;
 	public function rules() 
 	{
 		return [
