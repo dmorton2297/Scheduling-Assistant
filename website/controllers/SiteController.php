@@ -55,12 +55,25 @@ class SiteController extends Controller
     
     public function actionCalendarEntry() 
     {
+        $times = array(
+            '1000' => '1:00', 
+            '2000' => '2:00',
+            '3000' => '3:00', 
+            '4000' => '4:00', 
+            '5000' => '5:00', 
+            '6000' => '6:00',
+            '7000' => '7:00',  
+            '8000' => '8:00', 
+            '9000' => '9:00',
+            '1000' => '10:00',
+            '1100' => '11:00',
+            '1200' => '12:00' );
         $model = new CCalEntryForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             echo "Entry Created";
             return $this->render('calendar');
         }
-       return $this->render('entry', ['model'=> $model]); 
+       return $this->render('entry', ['model'=> $model, 'times'=> $times]); 
     }
 	
 }
