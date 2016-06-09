@@ -69,8 +69,8 @@ class SiteController extends Controller
             '1200' => '12:00' );
         $model = new CCalEntryForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            echo "Entry Created";
-            return $this->render('calendar');
+            $model->createEntry();
+            return;
         }
        return $this->render('entry', ['model'=> $model, 'times'=> $times]); 
     }
