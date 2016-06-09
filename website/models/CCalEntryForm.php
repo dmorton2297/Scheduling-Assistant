@@ -23,27 +23,5 @@ class CCalEntryForm extends Model
 		return [
 			[['title', 'description', 'startTimeDayVal', 'startTimeHour', 'endTimeHour', 'endTimeDayVal'], 'required'],		
 		];
-	}	
-
-    public function createEntry() 
-    {
-
-      //  if (is_null($title)) {
-        //    echo "it is null";
-       // }
-       // echo "test";
-        echo $this->title;
-        echo "\n";
-        echo $this->description;
-        echo "\n";
-        echo $this->notes;
-        echo "\n";
-        echo $this->startTimeHour;
-        echo $this->startTimeDayVal;
-        echo "\n";
-        echo $this->endTimeHour;
-        echo $this->endTimeDayVal;
-
-        return;
-    }
+	}
 }

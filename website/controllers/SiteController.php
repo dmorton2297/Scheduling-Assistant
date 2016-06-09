@@ -2,7 +2,10 @@
 namespace website\controllers;
 
 use Yii;
+use common\models\User;
+use common\models\UserSearch;
 use website\models\CCalEntryForm;
+use website\models\CCalEntry;
 use common\models\LoginForm;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -69,7 +72,27 @@ class SiteController extends Controller
             '1200' => '12:00' );
         $model = new CCalEntryForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->createEntry();
+            echo "we are here";
+            $record = new CCalEntry();
+            $record->title = $model->title;
+            $record->description = $model->description;
+            $record->notes = $model->notes;
+
+            //figuring out military times NEED TO ADD MINUTES
+            if ($model -> startTimeDayVal === 'pm') { 
+                $model -> startTimeHour = $model -> startTimeHour + 1200;
+            }
+            
+            if ($model -> endTimeDayVal === 'pm') { 
+                $model -> endTimeHour = $model -> endTimeHour + 1200;
+            }  
+
+            $record -> start_time = $model -> startTimeHour;
+            $record -> end_time = $model -> endTimeHour;
+        
+            $user = Yii::$app->user; 
+           // $record -> user_id = $user->id;
+           // $record -> save(); 
             return;
         }
        return $this->render('entry', ['model'=> $model, 'times'=> $times]); 
