@@ -11,23 +11,20 @@ use yii\bootstrop\DropDownList;
     <div>
         <h4> Start Time</h4>
         <div style="float: left; margin-right:10px;">
-            <?= Html::activeDropDownList($model, 'title', $times) ?>
+            <?= Html::activeDropDownList($model, 'startTimeHour', $times) ?>
         </div>
         <div style="margin-right:30px;">
-            <?= Html::activeDropDownList($model, 'title', array('am'=>'AM', 'pm'=>'PM')) ?>
+            <?= Html::activeDropDownList($model, 'startTimeDayVal', array('am'=>'AM', 'pm'=>'PM')) ?>
         </div>
     
         <h4> End Time </h4>
         <div style="float: left; margin-right:10px;">
-            <?= Html::activeDropDownList($model, 'startTime', $times) ?>
+            <?= Html::activeDropDownList($model, 'endTimeHour', $times) ?>
         </div>
         
         <div style="margin-right:30px;margin-bottom:30px;">
-            <?= Html::activeDropDownList($model, 'endTime', array('am'=>'AM', 'pm'=>'PM')) ?>
+            <?= Html::activeDropDownList($model, 'endTimeDayVal', array('am'=>'AM', 'pm'=>'PM')) ?>
         </div>
-
-
-
     </div>
     <?= Html::submitButton('Create Entry', ['class' => 'btn btn-primary', 'name' => 'create-button']) ?>
 

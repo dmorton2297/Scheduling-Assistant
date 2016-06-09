@@ -55,8 +55,7 @@ class SiteController extends Controller
     
     public function actionCalendarEntry() 
     {
-        $times = array(
-            '1000' => '1:00', 
+        $times = array('1000' => '1:00', 
             '2000' => '2:00',
             '3000' => '3:00', 
             '4000' => '4:00', 

@@ -7,15 +7,21 @@ use GLS\Audit\Logger;
 
 class CCalEntryForm extends Model 
 {
+    // Model values --------
 	public $title;
 	public $description;
     public $notes;
-    public $startTime;
-    public $endTime;
+    public $startTimeHour;
+    public $startTimeDayVal;
+    public $endTimeHour;
+    public $endTimeDayVal;
+    // -----------------------
+
+    // rules for form in entry.php
 	public function rules() 
 	{
 		return [
-			[['title', 'description', 'startTime', 'endTime'], 'required'],		
+			[['title', 'description', 'startTimeDayVal', 'startTimeHour', 'endTimeHour', 'endTimeDayVael'], 'required'],		
 		];
 	}	
 }
