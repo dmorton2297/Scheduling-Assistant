@@ -19,11 +19,11 @@ use yii\bootstrop\DropDownList;
     
         <h4> End Time </h4>
         <div style="float: left; margin-right:10px;">
-            <?= Html::activeDropDownList($model, 'title', $times) ?>
+            <?= Html::activeDropDownList($model, 'startTime', $times) ?>
         </div>
         
         <div style="margin-right:30px;margin-bottom:30px;">
-            <?= Html::activeDropDownList($model, 'title', array('am'=>'AM', 'pm'=>'PM')) ?>
+            <?= Html::activeDropDownList($model, 'endTime', array('am'=>'AM', 'pm'=>'PM')) ?>
         </div>
 
 
