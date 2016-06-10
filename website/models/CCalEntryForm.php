@@ -21,7 +21,7 @@ class CCalEntryForm extends Model
 	public function rules() 
 	{
 		return [
-			[['title', 'description', 'startTimeDayVal', 'startTimeHour', 'endTimeHour', 'endTimeDayVal'], 'required'],		
+			[['title', 'description', 'startTimeDayVal', 'startTimeHour', 'endTimeHour', 'endTimeDayVal', 'notes'], 'required'],		
 		];
 	}
 }

@@ -12,7 +12,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 /**
  * Site controller
  */
@@ -72,14 +73,14 @@ class SiteController extends Controller
             '1200' => '12:00' );
         $model = new CCalEntryForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            echo "we are here";
+            //echo "we are here";
             $record = new CCalEntry();
             $record->title = $model->title;
             $record->description = $model->description;
             $record->notes = $model->notes;
 
             //figuring out military times NEED TO ADD MINUTES
-            if ($model -> startTimeDayVal === 'pm') { 
+           /* if ($model -> startTimeDayVal === 'pm') { 
                 $model -> startTimeHour = $model -> startTimeHour + 1200;
             }
             
@@ -89,10 +90,29 @@ class SiteController extends Controller
 
             $record -> start_time = $model -> startTimeHour;
             $record -> end_time = $model -> endTimeHour;
-        
+            */
+
+            $record -> start = date("Y-m-d H:i:s");
+            $record -> end = date("Y-m-d H:i:s");
+            $record -> created_at = date("Y-m-d H:i:s");   
+            $record -> updated_at = date("Y-m-d H:i:s");  
+            $record -> id = 1;  
             $user = Yii::$app->user; 
-           // $record -> user_id = $user->id;
-           // $record -> save(); 
+            $record -> user_id = $user->id;
+
+           // echo $record -> id;
+           //echo $record -> user_id;
+            //echo $record -> title;
+          // echo $record -> description;
+           echo $record -> notes;
+           //echo $record -> start;
+          // echo $record -> end;
+           //echo $record -> updated_at;
+          // echo $record -> created_at;
+           if ($record -> save()) {
+            } else {
+                echo $record->getErrors();
+            } 
             return;
         }
        return $this->render('entry', ['model'=> $model, 'times'=> $times]); 
