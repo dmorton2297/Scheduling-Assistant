@@ -18,7 +18,11 @@ class m160610_164249_event_request extends Migration
             'title' => Schema::TYPE_STRING.'(32) NOT NULL',
             'description' => Schema::TYPE_TEXT,
             'notes' => Schema::TYPE_TEXT,    
-        ]); 
+        ]);
+
+        
+         $this->addForeignKey("fk_user", "event_request", "user_id", "users", "id", "CASCADE", "RESTRICT");
+         $this->addForeignKey("fk_requested_user", "event_request", "requested_user_id", "users", "id", "CASCADE", "RESTRICT"); 
     }
 
     public function down()
