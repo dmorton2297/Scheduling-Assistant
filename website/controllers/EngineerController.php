@@ -9,25 +9,16 @@ use GLS\Audit\Logger;
 
 class EngineerController extends Controller 
 {
-
-
-    // allows engineer to edit an existing
-    // calendar entry
-    public function actionEditCalendarEvent() 
+    // allow engineer to view pending requests
+    // for calendar event from PM's 
+    public function actionViewCalendarRequests() 
     {
 
     }
     
-    // allows engineer to delete existing calendar
-    // entry
-    public function actionDeleteCalendarEvent() 
-    {
-        
-    } 
-
-    // allow engineer to view pending requests
-    // for calendar event from PM's 
-    public function actionViewCalendarRequests() 
+    // allow and engineer to accept a request for a calendar entry
+    // from a project manager
+    public function actionApproveCalendarRequests()
     {
 
     }   
