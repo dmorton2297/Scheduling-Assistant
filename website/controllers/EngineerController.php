@@ -1,7 +1,7 @@
 <?php 
 namespace website\controllers;
 
-use yii;
+use Yii;
 use yii\web\Controller;
 use GLS\Audit\Logger;
 
