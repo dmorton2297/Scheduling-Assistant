@@ -5,6 +5,7 @@ This web Application was written during my Summer 2016 internship at Global Link
 
 ## Screen Captures
 <img src='http://i.imgur.com/AXbt2Gh.png' title='Video Walkthrough' width='400px' style='width: 4000px; height: 1000px;' a    lt='Video Walkthrough' />
+<img src='http://i.imgur.com/p0VQLHy.png' title='Video Walkthrough' width='400px' style='width: 4000px; height: 1000px; float: right;' a    lt='Video Walkthrough' />
 
 
 
