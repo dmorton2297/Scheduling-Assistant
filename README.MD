@@ -1,21 +1,9 @@
+# GLS Schedule Assistant
 
+## About
+This web Application was written during my Summer 2016 internship at Global Linking Solutions. This app is essentially a streamlined google calendars, allowing for basic calendar features as well as "group" functionality for increased company communication. This event follows the CRUD model and is written in PHP using the Yii2 framework / postgresql backend. 
 
-1. The following directories must be writable by the Apache Server for all environments
-   - website/runtime
-   - website/web/assets
-
-2. The web site should only publish the website/web directory.
-
-3. The local-templates directory contains files that will need to be customized for the 
-   specific machine and moved to the appropriate directory for the application to work.
-    
-4. For Development environment set 2 environment variables:
-   YII_DEBUG = true  (defaults to false)
-   YII_ENV = dev     (defaults to prod)
-
-   in the Apache configuraion you can use:
-     SetEnv YII_DEBUG true
-     SetEnv YII_ENV "dev"
-
+## Screen Captures
+<img src='http://i.imgur.com/AXbt2Gh.png' title='Video Walkthrough' width='400px' style='width: 4000px; height: 1000px;' a    lt='Video Walkthrough' />
 
 
